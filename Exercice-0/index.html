@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crack Code</title>
+</head>
+<body>
+    <form method="post" action="email.php">
+        <label>Code :</label>
+        <input type="text" id="code" name="code">
+        <input type="submit">
+    </form>
+    <script>
+        document.forms[0].addEventListener("submit", function(evenement) { 
+            if (document.getElementById("code").value == "042") {
+                evenement.preventDefault();
+                alert("Bon numéro !");
+                document.getElementById("code").focus();
+            }
+            else{
+                evenement.preventDefault();
+                alert("Code incorrect");
+                document.getElementById("code").focus();
+            }
+        });
+    </script>
+</body>
+</html>
